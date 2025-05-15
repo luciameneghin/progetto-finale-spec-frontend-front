@@ -8,6 +8,7 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState('')
+  const [sortOption, setSortOption] = useState('')
 
   async function fetchTrees() {
     try {
@@ -23,6 +24,19 @@ const Home = () => {
   const filteredTrees = trees
     .filter(tree => tree.title.toLowerCase().includes(searchTerm.toLowerCase()))
     .filter(tree => selectedCategory === '' || tree.category === selectedCategory)
+    .slice() // copia per non modificare state originale
+    .sort((a, b) => {
+      if (sortOption === 'title-asc') {
+        return a.title.localeCompare(b.title)
+      } else if (sortOption === 'title-desc') {
+        return b.title.localeCompare(a.title)
+      } else if (sortOption === 'category-asc') {
+        return a.category.localeCompare(b.category)
+      } else if (sortOption === 'category-desc') {
+        return b.category.localeCompare(a.category)
+      }
+      return 0
+    })
 
 
 
@@ -32,14 +46,27 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Homepage</h1>
-      <input
-        type="text"
-        placeholder='Cerca un albero...'
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button onClick={() => setIsModalOpen(true)}>Filtra per categoria</button>
+      <div className='flex justify-between'>
+        <input
+          type="text"
+          placeholder='Cerca un albero...'
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="border rounded p-2 mb-4"
+        />
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+          className="border rounded p-2 mb-4"
+        >
+          <option value="">Ordina per</option>
+          <option value="title-asc">Titolo (A-Z)</option>
+          <option value="title-desc">Titolo (Z-A)</option>
+          <option value="category-asc">Categoria (A-Z)</option>
+          <option value="category-desc">Categoria (Z-A)</option>
+        </select>
+        <button onClick={() => setIsModalOpen(true)} className="border rounded p-2 mb-4">Filtra per categoria</button>
+      </div>
       {filteredTrees.length > 0 ? (
         <ul>
           {filteredTrees.map((tree) => (
