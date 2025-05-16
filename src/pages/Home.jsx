@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import FilteredModal from '../components/FilteredModal.jsx'
+import { useContext } from 'react';
+import { FavoritesContext } from '../context/FavoritesContext.jsx';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
+
 
 const Home = () => {
   const [trees, setTrees] = useState([])
@@ -10,6 +14,8 @@ const Home = () => {
   const [sortOption, setSortOption] = useState('')
   const [compareList, setCompareList] = useState([])
   const navigate = useNavigate()
+
+  const { favorites, addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext);
 
   async function fetchTrees() {
     try {
@@ -33,7 +39,6 @@ const Home = () => {
       return 0
     })
 
-  // Qui faccio fetch dettagliato del singolo albero da aggiungere a compareList
   const toggleCompare = async (tree) => {
     const isAlreadySelected = compareList.find(t => t.id === tree.id)
     if (isAlreadySelected) {
@@ -90,6 +95,18 @@ const Home = () => {
                 className="border rounded px-3 py-1"
               >
                 {compareList.some(t => t.id === tree.id) ? 'Rimuovi' : 'Confronta'}
+              </button>
+              <button
+                onClick={() => {
+                  if (isFavorite(tree.id)) {
+                    removeFavorite(tree.id);
+                  } else {
+                    addFavorite(tree);
+                  }
+                }}
+                className="border rounded px-3 py-1 ml-2"
+              >
+                {isFavorite(tree.id) ? <FaHeart /> : <FaRegHeart />}
               </button>
             </li>
           ))}
