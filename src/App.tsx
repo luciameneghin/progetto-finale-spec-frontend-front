@@ -4,18 +4,23 @@ import AlbumDetail from './pages/AlbumDetail'
 import Favorites from './pages/Favorites'
 import Compare from './pages/Compare'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <>
+    <div className='min-h-screen flex flex-col'>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='albums/:id' element={<AlbumDetail />} />
-        <Route path='favorites' element={<Favorites />} />
-        <Route path='compare' element={<Compare />} />
-      </Routes>
-    </>
+      <main className='flex-grow'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='albums/:id' element={<AlbumDetail />} />
+          <Route path='favorites' element={<Favorites />} />
+          <Route path='compare' element={<Compare />} />
+        </Routes>
+
+      </main>
+      <Footer />
+    </div>
   )
 }
 

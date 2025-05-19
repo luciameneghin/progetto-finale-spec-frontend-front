@@ -2,11 +2,51 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div className="flex gap-4 p-4 bg-gray-100 justify-center">
-      <Link to="/" className="text-blue-500 hover:text-blue-700">Home</Link>
-      <Link to="favorites" className="text-blue-500 hover:text-blue-700">Favorites</Link>
-    </div>
+    <nav className="flex gap-8 bg-[#292929] justify-center items-center shadow-lg">
+
+      <Link
+        to="/"
+        className="w-[150px]"
+      >
+        <img src="/tape_Recorder-removebg-preview.jpg" alt="tape-recorder" />
+      </Link>
+
+      <Link
+        to="favorites"
+        className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
+      >
+        Favorites
+      </Link>
+
+
+      <Link
+        to="compare"
+        className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
+      >
+        Accedi
+      </Link>
+      <Link
+        to="compare"
+        className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
+      >
+        Accedi
+      </Link>
+      <Link
+        to="compare"
+        className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
+      >
+        Accedi
+      </Link>
+      <Link
+        to="compare"
+        className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
+      >
+        Accedi
+      </Link>
+
+    </nav>
   )
 }
 
 export default Navbar
+
