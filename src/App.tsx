@@ -15,7 +15,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='albums/:id' element={<AlbumDetail />} />
           <Route path='favorites' element={<Favorites />} />
-          <Route path='compare' element={<Compare />} />
+          <Route path='compare/:id' element={<Compare />} />
         </Routes>
 
       </main>

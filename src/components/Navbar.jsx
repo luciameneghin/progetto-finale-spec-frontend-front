@@ -20,28 +20,10 @@ const Navbar = () => {
 
 
       <Link
-        to="compare"
+        to="/compare/:id"
         className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
       >
-        Accedi
-      </Link>
-      <Link
-        to="compare"
-        className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
-      >
-        Accedi
-      </Link>
-      <Link
-        to="compare"
-        className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
-      >
-        Accedi
-      </Link>
-      <Link
-        to="compare"
-        className="text-[#e9a716] text-xl font-semibold tracking-wider hover:text-[#c7481d] transition"
-      >
-        Accedi
+        Comparatore
       </Link>
 
     </nav>
