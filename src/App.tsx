@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import AlbumDetail from './pages/AlbumDetail'
 import Favorites from './pages/Favorites'
-import Compare from './pages/Compare'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Compare from './pages/Compare'
 
 const App = () => {
   return (

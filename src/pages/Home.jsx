@@ -4,7 +4,7 @@ import FilteredModal from '../components/FilteredModal.jsx'
 import { FavoritesContext } from '../context/FavoritesContext.jsx'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import AlbumCarousel from '../components/AlbumCarousel'
-
+import AlbumComparePanel from '../components/AlbumComparePanel'
 
 const Home = () => {
   // stati e context
@@ -13,12 +13,11 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState('')
   const [sortOption, setSortOption] = useState('')
-  const [compareList, setCompareList] = useState([])
+  const [compareList, setCompareList] = useState([null, null, null, null])
 
   const navigate = useNavigate()
   const { favorites, addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext)
 
-  // Effetto per fetch album (fuori da useMemo)
   useEffect(() => {
     fetchAlbums()
   }, [])
@@ -60,7 +59,7 @@ const Home = () => {
     const isAlreadySelected = compareList.find(a => a.id === album.id)
     if (isAlreadySelected) {
       setCompareList(compareList.filter(a => a.id !== album.id))
-    } else if (compareList.length < 2) {
+    } else if (compareList.length < 4) {
       try {
         const res = await fetch(`http://localhost:3001/albums/${album.id}`)
         const fullAlbum = await res.json()
@@ -75,11 +74,19 @@ const Home = () => {
     fetchAlbums()
   }, [])
 
+  const filledCompareList = compareList.filter(Boolean)
+
   return (
     <div>
       {/* Carousel */}
       <AlbumCarousel />
       <div className="container mx-auto px-4 py-5">
+        <AlbumComparePanel
+          albums={albums}
+          compareList={compareList}
+          setCompareList={setCompareList}
+        />
+
         {/* Controlli di ricerca, filtro e ordinamento */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <input
@@ -146,11 +153,11 @@ const Home = () => {
                     <button
                       onClick={() => toggleCompare(album)}
                       disabled={
-                        compareList.length === 2 && !compareList.some(a => a.id === album.id)
+                        filledCompareList.length === 4 && !filledCompareList.some(a => a.id === album.id)
                       }
                       className="flex-1 rounded border border-[#568a99] bg-[#e9a716] px-3 py-1 text-sm font-semibold text-[#292929] hover:bg-[#c7481d] disabled:opacity-50 disabled:cursor-not-allowed transition"
                     >
-                      {compareList.some(a => a.id === album.id) ? 'Rimuovi' : 'Confronta'}
+                      {filledCompareList.some(a => a.id === album.id) ? 'Rimuovi' : 'Confronta'}
                     </button>
 
                     <button
@@ -176,14 +183,6 @@ const Home = () => {
             Non ci sono album disponibili
           </p>
         )}
-
-        <button
-          disabled={compareList.length !== 2}
-          onClick={() => navigate('/compare', { state: { compareList } })}
-          className="mt-8 w-full max-w-sm mx-auto block rounded bg-[#c7481d] px-6 py-3 text-white font-semibold hover:bg-[#e9a716] disabled:opacity-50 disabled:cursor-not-allowed transition"
-        >
-          Confronta album
-        </button>
 
         <FilteredModal
           isModalOpen={isModalOpen}
