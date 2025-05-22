@@ -1,53 +1,56 @@
-import { useState } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import CitCarousel from './CitCarousel'
-import { Carousel } from 'react-responsive-carousel'
+import React from 'react'
 
-const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
+const AlbumComparePanel = ({ albums, compareList, setCompareList, activeSlot, setActiveSlot }) => {
   const [searchQuery, setSearchQuery] = useState('')
-  const [activeSlot, setActiveSlot] = useState(null)
-
   const navigate = useNavigate()
 
-  const max_album = 4;
-  const filteredAlbums = searchQuery.trim() === ''
-    ? albums
-    : albums.filter((album) => {
+  const max_album = 4
+
+  const filteredAlbums = useMemo(() => {
+    if (searchQuery.trim() === '') return albums
+    return albums.filter((album) => {
       const title = album.title || album.album?.title || ''
       return title.toLowerCase().includes(searchQuery.toLowerCase())
     })
+  }, [searchQuery, albums])
 
-  const handleSelectAlbum = (album) => {
-    const updatedList = [...compareList]
-    updatedList[activeSlot] = album
-    setCompareList(updatedList)
+  const handleSelectAlbum = useCallback((album) => {
+    setCompareList(prev => {
+      const updated = [...prev]
+      updated[activeSlot] = album
+      return updated
+    })
     setActiveSlot(null)
     setSearchQuery('')
-  }
+  }, [activeSlot, setCompareList, setActiveSlot])
 
-  const handleClearSlot = (index) => {
-    const updatedList = [...compareList]
-    updatedList[index] = null
-    setCompareList(updatedList)
-  }
+  const handleClearSlot = useCallback((index) => {
+    setCompareList(prev => {
+      const updated = [...prev]
+      updated[index] = null
+      return updated
+    })
+  }, [setCompareList])
 
-  const handleCompare = () => {
+  const handleCompare = useCallback(() => {
     const selectedAlbums = compareList.filter(Boolean)
     if (selectedAlbums.length >= 2) {
       navigate('/compare/:id', { state: { filledCompareList: selectedAlbums } })
     } else {
       alert('Seleziona almeno 2 album per confrontarli')
     }
-  }
+  }, [compareList, navigate])
 
   return (
-    <div className="bg-[#f9f6f2] border-4 border-[#568a99] rounded-xl p-6 shadow-lg mb-10">
+    <div className="border-4 border-[#568a99] bg-gray-100 rounded-xl p-6 shadow-lg mb-10">
       <h2 className="text-2xl font-extrabold text-center text-[#c7481d] mb-6">
         Seleziona almeno due album da confrontare
       </h2>
 
       <div className="flex flex-col md:flex-row justify-center items-stretch gap-6">
-        {[...Array(max_album).keys()].map((index, i) => (
+        {[...Array(max_album).keys()].map((index) => (
           <div
             key={index}
             className="flex-1 border-2 border-dashed border-[#e9a716] p-4 cursor-pointer hover:bg-[#e9a716]/10 transition"
@@ -56,12 +59,16 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
             {compareList[index] ? (
               <div className="flex flex-col items-center text-[#292929]">
                 <img
-                  src={compareList[index].cover || compareList[index].album.cover}
-                  alt={compareList[index].title || compareList[index].album.title}
+                  src={compareList[index].cover || compareList[index].album?.cover}
+                  alt={compareList[index].title || compareList[index].album?.title}
                   className="w-45 h-45 object-cover shadow-md mb-2"
                 />
-                <p className="font-semibold text-center">{compareList[index].title || compareList[index].album.title}</p>
-                <p className="text-center">{compareList[index].artist || compareList[index].album.artist}</p>
+                <p className="font-semibold text-center">
+                  {compareList[index].title || compareList[index].album?.title}
+                </p>
+                <p className="text-center">
+                  {compareList[index].artist || compareList[index].album?.artist}
+                </p>
                 <button
                   className="mt-2 text-sm text-[#c7481d] hover:underline"
                   onClick={(e) => {
@@ -93,18 +100,20 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
                 className="w-full p-2 border border-[#568a99] rounded mb-4 focus:outline-none focus:ring-2 focus:ring-[#e9a716]"
               />
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-h-64 overflow-y-auto">
-                {filteredAlbums.map((album, i) => (
+                {filteredAlbums.map((album) => (
                   <div
-                    key={album.id || i}
+                    key={album.id}
                     className="cursor-pointer border rounded-lg p-2 hover:bg-[#e9a716]/20 transition"
                     onClick={() => handleSelectAlbum(album)}
                   >
                     <img
-                      src={album.cover || album.album.cover}
-                      alt={album.title || album.album.title}
-                      className="w-full h-50 text-center object-contain mb-2"
+                      src={album.cover || album.album?.cover}
+                      alt={album.title || album.album?.title}
+                      className="w-full h-50 object-contain mb-2"
                     />
-                    <p className="text-sm font-semibold mt-1 text-center">{album.title || album.album.title}</p>
+                    <p className="text-sm font-semibold mt-1 text-center">
+                      {album.title || album.album?.title}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -117,6 +126,7 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
           )}
         </div>
       )}
+
       {compareList.filter(Boolean).length >= 2 && (
         <div className="mt-8 text-center">
           <button
@@ -131,4 +141,5 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
   )
 }
 
-export default AlbumComparePanel
+export default React.memo(AlbumComparePanel)
+

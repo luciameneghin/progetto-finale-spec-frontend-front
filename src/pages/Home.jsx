@@ -1,10 +1,13 @@
-import React, { useState, useEffect, useContext, useMemo } from 'react'
+import React, { useState, useEffect, useContext, useMemo, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import FilteredModal from '../components/FilteredModal.jsx'
 import { FavoritesContext } from '../context/FavoritesContext.jsx'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import AlbumCarousel from '../components/AlbumCarousel'
 import AlbumComparePanel from '../components/AlbumComparePanel'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import CitCarousel from '../components/CitCarousel.jsx'
 
 const Home = () => {
   // stati e context
@@ -14,14 +17,13 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState('')
   const [sortOption, setSortOption] = useState('')
   const [compareList, setCompareList] = useState([null, null, null, null])
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('')
+  const [activeSlot, setActiveSlot] = useState(null);
+
 
   const { addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext)
 
-  useEffect(() => {
-    fetchAlbums()
-  }, [])
-
-  async function fetchAlbums() {
+  const fetchAlbums = useCallback(async () => {
     try {
       const response = await fetch('http://localhost:3001/albums')
       const basicAlbums = await response.json()
@@ -36,7 +38,7 @@ const Home = () => {
     } catch (error) {
       console.error('Error fetching albums:', error)
     }
-  }
+  }, [])
 
   // useMemo solo per filteredAlbums
   const filteredAlbums = useMemo(() => {
@@ -51,10 +53,10 @@ const Home = () => {
         if (sortOption === 'category-desc') return b.category.localeCompare(a.category)
         return 0
       });
-  }, [albums, searchTerm, selectedCategory, sortOption])
+  }, [albums, debouncedSearchTerm, selectedCategory, sortOption])
 
 
-  const toggleCompare = async (album) => {
+  const toggleCompare = useCallback(async (album) => {
     const isAlreadySelected = compareList.find(a => a.id === album.id)
     if (isAlreadySelected) {
       setCompareList(compareList.filter(a => a.id !== album.id))
@@ -67,78 +69,128 @@ const Home = () => {
         console.error('Errore fetching dettaglio album:', err)
       }
     }
-  }
+  }, [compareList])
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm)
+    }, 300)
+    return () => clearTimeout(timeout)
+  }, [searchTerm])
 
   useEffect(() => {
     fetchAlbums()
-  }, [])
+  }, [fetchAlbums])
 
   const filledCompareList = compareList.filter(Boolean)
+  const handleAddOrRemove = useCallback((album) => {
+    if (isFavorite(album.id)) {
+      removeFavorite(album.id)
+      toast.info(`Album "${album.title}" rimosso dai preferiti.`, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        theme: "colored"
+      })
+    } else {
+      addFavorite(album)
+      toast.success(`Album "${album.title}" aggiunto ai preferiti!`, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        theme: "colored"
+      })
+    }
+  }, [addFavorite, removeFavorite, isFavorite])
 
   return (
     <div>
       {/* Carousel */}
       <AlbumCarousel />
-      <div className="container mx-auto px-4 py-5">
-        <h1 className='text-2xl font-extrabold text-center text-[#c7481d] py-5'>Compara. Analizza. Scegli il tuo album perfetto.</h1>
-        <AlbumComparePanel
-          albums={albums}
-          compareList={compareList}
-          setCompareList={setCompareList}
-        />
-
-        {/* Controlli di ricerca, filtro e ordinamento */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-          <input
-            type="text"
-            placeholder="Cerca un album..."
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-            className="flex-1 min-w-[200px] rounded border border-[#568a99] px-4 py-2 text-[#292929] placeholder-[#c7481d] focus:outline-none focus:ring-2 focus:ring-[#e9a716]"
+      <div className='bg-[#f9f6f2] shadow-xl'>
+        <div className="container mx-auto px-4 py-5">
+          <h1 className='text-4xl font-extrabold text-center text-[#c7481d] py-20'>Compara. Analizza. Scegli il tuo album perfetto.</h1>
+          <AlbumComparePanel
+            albums={albums}
+            compareList={compareList}
+            setCompareList={setCompareList}
+            activeSlot={activeSlot}
+            setActiveSlot={setActiveSlot}
           />
-
-          <select
-            value={sortOption}
-            onChange={e => setSortOption(e.target.value)}
-            className="rounded border border-[#568a99] px-4 py-2 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716]"
-          >
-            <option value="">Ordina per</option>
-            <option value="title-asc">Titolo (A-Z)</option>
-            <option value="title-desc">Titolo (Z-A)</option>
-            <option value="category-asc">Categoria (A-Z)</option>
-            <option value="category-desc">Categoria (Z-A)</option>
-          </select>
-
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="rounded border border-[#568a99] bg-[#e9a716] px-4 py-2 font-semibold text-[#292929] hover:bg-[#c7481d] transition"
-          >
-            Filtra per categoria
-          </button>
         </div>
+      </div>
 
-        {/* Griglia album */}
-        {filteredAlbums.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {filteredAlbums.map(album => (
-              <div
-                key={album.id}
-                className="flex flex-col border-b border-r border-[#568a992c] shadow-md"
+      {/* Controlli di ricerca, filtro e ordinamento */}
+      <div style={{ position: 'relative', minHeight: '400px' }}>
+        <div
+          style={{
+            position: 'absolute',
+            top: -150, left: 0, right: 1500, bottom: 0,
+            backgroundImage: "url('public/pattern-recorder-removebg.png')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '1000px 1000px',
+            opacity: 0.5,
+            pointerEvents: 'none',
+            zIndex: -10,
+            transform: 'scaleX(-1)',
+          }} />
+        <div className='container mx-auto mx-10' style={{ position: 'relative', zIndex: 100, padding: '20px' }}>
+          <div className='mx-50'>
+
+            <h1 className='text-2xl font-extrabold text-[#c7481d] pt-15 pb-5'>Gli iconici album anni '70</h1>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+              <input
+                type="text"
+                placeholder="Cerca un album..."
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+                className="flex-1 min-w-[200px] rounded border border-[#568a99] px-4 py-2 text-[#292929] placeholder-[#c7481d] focus:outline-none focus:ring-2 focus:ring-[#e9a716]"
+              />
+
+              <select
+                value={sortOption}
+                onChange={e => setSortOption(e.target.value)}
+                className="rounded border border-[#568a99] px-4 py-2 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716]"
               >
-                <Link to={`/albums/${album.id}`}>
-                  <img
-                    src={album.cover}
-                    alt={album.title}
-                    className="w-75 object-cover shadow-md mb-2"
-                  />
+                <option value="">Ordina per</option>
+                <option value="title-asc">Titolo (A-Z)</option>
+                <option value="title-desc">Titolo (Z-A)</option>
+                <option value="category-asc">Categoria (A-Z)</option>
+                <option value="category-desc">Categoria (Z-A)</option>
+              </select>
+
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="rounded border border-[#568a99] bg-[#e9a716] px-4 py-2 font-semibold text-[#292929] hover:bg-[#c7481d] transition"
+              >
+                Filtra per categoria
+              </button>
+            </div>
+          </div>
+
+          {/* Griglia album */}
+          {filteredAlbums.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pb-12">
+              {filteredAlbums.map(album => (
+                <div
+                  key={album.id}
+                  className="flex flex-col border-b border-r border-[#568a992c] shadow-md bg-white"
+                >
+                  <Link to={`/albums/${album.id}`}>
+                    <img
+                      src={album.cover}
+                      alt={album.title}
+                      className="w-75 object-cover shadow-md mb-2"
+                    />
+                    <h1
+                      to={`/albums/${album.id}`}
+                      className="block text-lg font-semibold text-[#568a99] hover:text-[#c7481d] mb-1 px-3"
+                    >
+                      {album.title}
+                    </h1>
+                  </Link>
                   <div className="flex flex-col flex-grow justify-between px-3">
                     <div>
-                      <h1
-                        to={`/albums/${album.id}`}
-                        className="block text-lg font-semibold text-[#568a99] hover:text-[#c7481d] mb-1"
-                      >
-                        {album.title}
-                      </h1>
                       <p className="text-sm text-[#292929] mb-1">
                         {album.artist}
                       </p>
@@ -147,36 +199,49 @@ const Home = () => {
                       </p>
                     </div>
 
-                    <div className="mt-4 flex justify-between items-center gap-2">
+                    <div className="mt-4 flex justify-between items-center gap-2 relative">
                       <button
-                        onClick={() => {
-                          isFavorite(album.id) ? removeFavorite(album.id) : addFavorite(album)
-                        }}
-                        className="text-xl text-[#c7481d] hover:scale-110 transition"
+                        onClick={() => handleAddOrRemove(album)}
+                        className="text-xl text-[#e9a716] hover:scale-110 transition absolute right-0 bottom-3 border-2 rounded-full p-2"
                         aria-label={isFavorite(album.id) ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'}>
                         {isFavorite(album.id) ? <FaHeart /> : <FaRegHeart />}
                       </button>
                     </div>
                   </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-[#292929] text-center mt-12 text-lg font-semibold">
-            Non ci sono album disponibili
-          </p>
-        )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-[#292929] text-center mt-12 text-lg font-semibold">
+              Non ci sono album disponibili
+            </p>
+          )}
 
-        <FilteredModal
-          isModalOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
+          <FilteredModal
+            isModalOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        </div>
+        <div
+          style={{
+            position: 'absolute',
+            top: 800, left: 1500, right: 0, bottom: 0,
+            backgroundImage: "url('public/pattern-recorder-removebg.png')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '800px 800px',
+            opacity: 0.5,
+            pointerEvents: 'none',
+            zIndex: -10,
+          }} />
+      </div>
+
+      <div className='bg-[#f9f6f2] py-20'>
+        <CitCarousel />
       </div>
     </div>
   )
 }
 
-export default Home
+export default React.memo(Home)

@@ -38,7 +38,7 @@ const images = [
 
 const AlbumCarousel = () => {
   return (
-    <div className="w-full max-w-screen overflow-hidden">
+    <div className="w-full max-w-screen overflow-hidden mt-37">
       <Carousel
         autoPlay
         infiniteLoop

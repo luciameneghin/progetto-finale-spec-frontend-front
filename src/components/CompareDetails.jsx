@@ -1,6 +1,7 @@
-const CompareDetails = ({ compareList, onRemoveAlbum }) => {
-  const nonEmptyAlbums = compareList.filter(Boolean)
+import React, { useMemo } from 'react'
 
+const CompareDetails = ({ compareList, onRemoveAlbum }) => {
+  const nonEmptyAlbums = useMemo(() => compareList.filter(Boolean), [compareList])
 
   return (
     <div className="mt-12 p-8">
@@ -64,6 +65,7 @@ const renderAlbumDetails = (album) => {
   )
 }
 
-export default CompareDetails
+export default React.memo(CompareDetails)
+
 
 

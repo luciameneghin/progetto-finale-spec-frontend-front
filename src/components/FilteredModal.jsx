@@ -22,11 +22,12 @@ const FilteredModal = ({ isModalOpen, onClose, selectedCategory, setSelectedCate
           <option value="">Tutti i generi</option>
           <option value="Rock">Rock</option>
           <option value="Funk / Soul">Funk / Soul</option>
-          <option value="Disco">Disco</option>
-          <option value="Soul">Soul</option>
-          <option value="Jazz">Jazz</option>
-          <option value="Prog">Prog</option>
-          <option value="Blues">Blues</option>
+          <option value="Hard Rock">Hard Rock</option>
+          <option value="Pop">Pop</option>
+          <option value="Singer-Songwriter">Singer-Songwriter</option>
+          <option value="Hard Rock">Hard Rock</option>
+          <option value="Progressive Rock">Progressive Rock</option>
+          <option value="Folk">Folk</option>
         </select>
 
         <div className="flex justify-between">

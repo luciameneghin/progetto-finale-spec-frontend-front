@@ -92,9 +92,6 @@ const CitCarousel = () => {
             <p className="text-sm font-medium text-[#292929] italic">
               {quote.song}
             </p>
-            <p className="text-sm font-medium text-[#292929]">
-              {quote.location}, {quote.year}
-            </p>
           </div>
         ))}
       </Carousel>

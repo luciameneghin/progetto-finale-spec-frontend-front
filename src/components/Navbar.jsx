@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav className="flex gap-8 bg-[#292929] justify-center items-center shadow-lg">
+    <nav
+      style={{ boxShadow: '0 4px 12px rgba(233, 167, 22, 0.6)' }}
+      className="fixed top-0 left-0 right-0 w-full flex gap-8 bg-[#292929] justify-center items-center shadow-lg z-1000 shadow-3xl boxShadow">
 
       <Link
         to="/"

@@ -3,7 +3,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#292929] text-[#e9a716] py-5 mt-12 shadow-inner">
+    <footer className="bg-[#292929] text-[#e9a716] py-5 shadow-inner">
       <div className="max-w-4xl mx-auto px-4 pb-4 flex flex-col md:flex-row justify-between items-center">
         <div>
           <img src="/tape_Recorder-removebg-preview.jpg" alt="" />
