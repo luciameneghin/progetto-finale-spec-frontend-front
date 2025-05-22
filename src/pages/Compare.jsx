@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import CompareDetails from '../components/CompareDetails'
 import AlbumSelectorModal from '../components/AlbumSelectorModal'
 import AlbumComparePanel from '../components/AlbumComparePanel'
+import CitCarousel from '../components/CitCarousel'
 
 const Compare = ({ handleRemoveAlbum }) => {
 
@@ -32,7 +33,6 @@ const Compare = ({ handleRemoveAlbum }) => {
           )
         )
         const fullAlbums = await Promise.all(responses.map(r => r.json()))
-        console.log('Album completi:', fullAlbums)
 
         setAlbums(fullAlbums)
       } catch (err) {
@@ -44,18 +44,29 @@ const Compare = ({ handleRemoveAlbum }) => {
   }, [])
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <AlbumComparePanel
-        albums={albums}
-        compareList={compareList}
-        setCompareList={setCompareList}
-        activeSlot={activeSlot}
-        setActiveSlot={setActiveSlot}
-      />
-      <CompareDetails
-        compareList={compareList}
-        onRemoveAlbum={handleRemoveAlbum}
-      />
+    <>
+      <div className="container mx-auto px-4 py-6">
+        <div className='text-center my-10 '>
+          <h1 className='text-5xl font-semibold'>Ogni disco ha una storia. Quale racconterà la tua?</h1>
+          <h4>Tra vinili e leggende: trova il tuo album perfetto.</h4>
+        </div>
+        <AlbumComparePanel
+          albums={albums}
+          compareList={compareList}
+          setCompareList={setCompareList}
+          activeSlot={activeSlot}
+          setActiveSlot={setActiveSlot}
+        />
+      </div>
+      <div className='bg-[#292929]'>
+        <div className='container mx-auto'>
+          <CompareDetails
+            compareList={compareList}
+            onRemoveAlbum={handleRemoveAlbum}
+          />
+
+        </div>
+      </div>
 
       <AlbumSelectorModal
         isOpen={isSelectorOpen}
@@ -67,8 +78,6 @@ const Compare = ({ handleRemoveAlbum }) => {
             const res = await fetch(`http://localhost:3001/albums/${albumId}`);
             const data = await res.json();
 
-
-            // Assicurati di accedere sempre alla proprietà album
             const selectedAlbum = data.success && data.album ? data.album : null;
             if (selectedAlbum) {
               const updated = [...compareList];
@@ -83,7 +92,12 @@ const Compare = ({ handleRemoveAlbum }) => {
           }
         }}
       />
-    </div>
+
+      <div className='pt-10'>
+        <CitCarousel />
+      </div>
+
+    </>
   )
 }
 

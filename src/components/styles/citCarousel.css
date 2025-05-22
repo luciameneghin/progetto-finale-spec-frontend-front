@@ -1,0 +1,23 @@
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #292929;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-arrow-left {
+  left: 20px;
+  padding-bottom: 50px;
+}
+
+.custom-arrow-right {
+  right: 20px;
+  padding-bottom: 50px;
+}

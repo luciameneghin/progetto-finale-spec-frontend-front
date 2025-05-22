@@ -3,15 +3,15 @@ const CompareDetails = ({ compareList, onRemoveAlbum }) => {
 
 
   return (
-    <div className="mt-12 p-8 bg-[#292929]/10 rounded-2xl shadow-inner">
-      <h1 className="text-3xl font-extrabold mb-8 text-center text-[#c7481d]">
-        Confronto tra album musicali anni '70
-      </h1>
+    <div className="mt-12 p-8">
 
       {nonEmptyAlbums.length < 2 ? (
-        <p className="text-center text-[#568a99]">
-          Seleziona almeno due album per iniziare il confronto.
-        </p>
+        <div className="py-50">
+          <p className="text-center text-[#568a99] font-semibold text-3xl">
+            Seleziona almeno due album per iniziare il confronto.
+          </p>
+
+        </div>
 
       ) : (
         <div className={`grid gap-6 ${nonEmptyAlbums.length >= 4
@@ -60,8 +60,6 @@ const renderAlbumDetails = (album) => {
       ) : (
         <p className="text-sm italic text-gray-500">Nessuna traccia disponibile</p>
       )}
-      <p className="mt-2 text-sm">{resolvedAlbum.description}</p>
-      <p className="mt-2 text-sm">{resolvedAlbum.success}</p>
     </div>
   )
 }

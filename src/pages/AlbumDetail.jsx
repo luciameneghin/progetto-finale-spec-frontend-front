@@ -34,26 +34,90 @@ const AlbumDetail = () => {
       <button
         onClick={() => navigate('/')}
         className="mb-6 px-4 py-2 rounded bg-[#e9a716] text-[#292929] font-semibold hover:bg-[#c7481d] transition"
-      >
-        ← Torna alla Home
-      </button>
+      > ← Torna alla Home</button>
 
-      <h1 className="text-4xl font-extrabold text-[#c7481d] mb-4">{albumDetail.title}</h1>
+      <div>
+        <div className='flex'>
+          <div>
+            <img
+              src={albumDetail.cover}
+              alt={albumDetail.title}
+              className="w-50 max-w-sm object-cover"
+            />
+          </div>
 
-      <div className="flex flex-col md:flex-row gap-8">
-        <img
-          src={albumDetail.cover}
-          alt={albumDetail.title}
-          className="w-full max-w-sm rounded-lg shadow-md object-cover"
-        />
+          {/* blocco di testo */}
+          <div className="flex flex-col justify-between w-full ml-4">
+            {/* Riga 1: artista, titolo, rating */}
+            <div className="flex justify-between items-center">
+              <p className="text-[#568a99] text-2xl font-bold mt-1">
+                {albumDetail.artist}
+                <span className="text-2xl font-bold text-[#c7481d]"> - {albumDetail.title}</span>
+              </p>
+              <h3 className="text-[#e9a716]">★ {albumDetail.rating}</h3>
+            </div>
+
+            {/* Riga 2: etichetta sotto */}
+            <div className="flex flex-col mt-4 gap-2">
+              <div className='flex gap-2'>
+                <label className="font-semibold">Etichetta:</label>
+                <p>{albumDetail.label}</p>
+              </div>
+              <div className='flex gap-2'>
+                <label className="font-semibold">Paese:</label>
+                <p>{albumDetail.origin}</p>
+              </div>
+              <div className='flex gap-2'>
+                <label className="font-semibold">Anno di uscita:</label>
+                <p>{albumDetail.year}</p>
+              </div>
+              <div className='flex gap-2'>
+                <label className="font-semibold">Genere:</label>
+                <p>{albumDetail.category}</p>
+              </div>
+              <div className='flex gap-2'>
+                <label className="font-semibold">Prezzi</label>
+                <div>
+                  <p>CD: {albumDetail.price.cd} €</p>
+                  <p>Vinile: {albumDetail.price.vinyl} €</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* tracce */}
+        <div className='my-5'>
+          <label className='font-semibold'>Elenco tracce:</label>
+          <p>Tracce totali: {albumDetail.tracksNumber}</p>
+          <p>Durata totale dell'album: {albumDetail.duration}</p>
+          <table>
+            <tbody>
+              {albumDetail.tracks.map((track, index) => (
+                <tr key={index} className="border-b border-gray-300">
+                  <td className="py-2">{track.title}</td>
+                  <td className="py-2">{track.duration}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* descrizione */}
+        <div>
+          <label className='font-semibold'>Descrizione:</label>
+          <p className="text-sm text-[#292929] mb-1">{albumDetail.description}</p>
+        </div>
+      </div>
+
+      {/* <div className="flex flex-col md:flex-row gap-8">
 
         <div className="flex-1 text-[#292929]">
           <p className="mb-2">
             <strong className="text-[#568a99]">Categoria:</strong> {albumDetail.category}
           </p>
-          <p className="mb-2">
-            <strong className="text-[#568a99]">Artista:</strong> {albumDetail.artist}
-          </p>
+
           <p className="mb-2">
             <strong className="text-[#568a99]">Anno di uscita:</strong> {albumDetail.year}
           </p>
@@ -76,7 +140,7 @@ const AlbumDetail = () => {
             <li>Vinile: {albumDetail.price.vinyl} €</li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

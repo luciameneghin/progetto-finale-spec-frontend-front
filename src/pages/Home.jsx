@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useMemo } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import FilteredModal from '../components/FilteredModal.jsx'
 import { FavoritesContext } from '../context/FavoritesContext.jsx'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
@@ -15,8 +15,7 @@ const Home = () => {
   const [sortOption, setSortOption] = useState('')
   const [compareList, setCompareList] = useState([null, null, null, null])
 
-  const navigate = useNavigate()
-  const { favorites, addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext)
+  const { addFavorite, removeFavorite, isFavorite } = useContext(FavoritesContext)
 
   useEffect(() => {
     fetchAlbums()
@@ -124,58 +123,42 @@ const Home = () => {
             {filteredAlbums.map(album => (
               <div
                 key={album.id}
-                className="flex flex-col border-1 border-[#568a992c]"
+                className="flex flex-col border-b border-r border-[#568a992c] shadow-md"
               >
                 <Link to={`/albums/${album.id}`}>
                   <img
                     src={album.cover}
                     alt={album.title}
-                    className="h-50 object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-75 object-cover shadow-md mb-2"
                   />
+                  <div className="flex flex-col flex-grow justify-between px-3">
+                    <div>
+                      <h1
+                        to={`/albums/${album.id}`}
+                        className="block text-lg font-semibold text-[#568a99] hover:text-[#c7481d] mb-1"
+                      >
+                        {album.title}
+                      </h1>
+                      <p className="text-sm text-[#292929] mb-1">
+                        {album.artist} – {album.year}
+                      </p>
+                      <p className="text-sm text-[#568a99]">
+                        {album.category} – ★ {album.rating}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 flex justify-between items-center gap-2">
+                      <button
+                        onClick={() => {
+                          isFavorite(album.id) ? removeFavorite(album.id) : addFavorite(album)
+                        }}
+                        className="text-xl text-[#c7481d] hover:scale-110 transition"
+                        aria-label={isFavorite(album.id) ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'}>
+                        {isFavorite(album.id) ? <FaHeart /> : <FaRegHeart />}
+                      </button>
+                    </div>
+                  </div>
                 </Link>
-
-                <div className="flex flex-col flex-grow justify-between">
-                  <div>
-                    <Link
-                      to={`/albums/${album.id}`}
-                      className="block text-lg font-semibold text-[#568a99] hover:text-[#c7481d] mb-1"
-                    >
-                      {album.title}
-                    </Link>
-                    <p className="text-sm text-[#292929] mb-1">
-                      {album.artist} – {album.year}
-                    </p>
-                    <p className="text-sm text-[#568a99]">
-                      {album.category} – ★ {album.rating}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 flex justify-between items-center gap-2">
-                    <button
-                      onClick={() => toggleCompare(album)}
-                      disabled={
-                        filledCompareList.length === 4 && !filledCompareList.some(a => a.id === album.id)
-                      }
-                      className="flex-1 rounded border border-[#568a99] bg-[#e9a716] px-3 py-1 text-sm font-semibold text-[#292929] hover:bg-[#c7481d] disabled:opacity-50 disabled:cursor-not-allowed transition"
-                    >
-                      {filledCompareList.some(a => a.id === album.id) ? 'Rimuovi' : 'Confronta'}
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        isFavorite(album.id)
-                          ? removeFavorite(album.id)
-                          : addFavorite(album)
-                      }}
-                      className="text-xl text-[#c7481d] hover:scale-110 transition"
-                      aria-label={
-                        isFavorite(album.id) ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'
-                      }
-                    >
-                      {isFavorite(album.id) ? <FaHeart /> : <FaRegHeart />}
-                    </button>
-                  </div>
-                </div>
               </div>
             ))}
           </div>

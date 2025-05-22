@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import CitCarousel from './CitCarousel'
+import { Carousel } from 'react-responsive-carousel'
 
 const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
   const [searchQuery, setSearchQuery] = useState('')
@@ -10,10 +12,10 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
   const max_album = 4;
   const filteredAlbums = searchQuery.trim() === ''
     ? albums
-    : albums.filter((album) =>
-      album.title &&
-      album.title.toLowerCase().includes(searchQuery.toLowerCase())
-    )
+    : albums.filter((album) => {
+      const title = album.title || album.album?.title || ''
+      return title.toLowerCase().includes(searchQuery.toLowerCase())
+    })
 
   const handleSelectAlbum = (album) => {
     const updatedList = [...compareList]
@@ -38,7 +40,6 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
     }
   }
 
-  console.log('Album nel ComparePanel:', albums)
   return (
     <div className="bg-[#f9f6f2] border-4 border-[#568a99] rounded-xl p-6 shadow-lg mb-10">
       <h2 className="text-2xl font-extrabold text-center text-[#c7481d] mb-6">
@@ -49,7 +50,7 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
         {[...Array(max_album).keys()].map((index, i) => (
           <div
             key={index}
-            className="flex-1 border-2 border-dashed border-[#e9a716] rounded-lg p-4 cursor-pointer hover:bg-[#e9a716]/10 transition"
+            className="flex-1 border-2 border-dashed border-[#e9a716] p-4 cursor-pointer hover:bg-[#e9a716]/10 transition"
             onClick={() => setActiveSlot(index)}
           >
             {compareList[index] ? (
@@ -57,9 +58,10 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
                 <img
                   src={compareList[index].cover || compareList[index].album.cover}
                   alt={compareList[index].title || compareList[index].album.title}
-                  className="w-32 h-32 object-cover rounded shadow-md mb-2"
+                  className="w-45 h-45 object-cover shadow-md mb-2"
                 />
                 <p className="font-semibold text-center">{compareList[index].title || compareList[index].album.title}</p>
+                <p className="text-center">{compareList[index].artist || compareList[index].album.artist}</p>
                 <button
                   className="mt-2 text-sm text-[#c7481d] hover:underline"
                   onClick={(e) => {
@@ -100,9 +102,9 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
                     <img
                       src={album.cover || album.album.cover}
                       alt={album.title || album.album.title}
-                      className="w-full h-24 object-cover rounded"
+                      className="w-full h-50 text-center object-contain mb-2"
                     />
-                    <p className="text-sm mt-1 text-center">{album.title || album.album.title}</p>
+                    <p className="text-sm font-semibold mt-1 text-center">{album.title || album.album.title}</p>
                   </div>
                 ))}
               </div>
@@ -115,8 +117,6 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
           )}
         </div>
       )}
-
-
       {compareList.filter(Boolean).length >= 2 && (
         <div className="mt-8 text-center">
           <button
@@ -125,10 +125,8 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList }) => {
           >
             Confronta
           </button>
-
         </div>
       )}
-
     </div>
   )
 }
