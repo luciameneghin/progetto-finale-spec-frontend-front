@@ -53,7 +53,7 @@ const Home = () => {
       });
   }, [albums, searchTerm, selectedCategory, sortOption])
 
-  // toggleCompare fuori da useMemo
+
   const toggleCompare = async (album) => {
     const isAlreadySelected = compareList.find(a => a.id === album.id)
     if (isAlreadySelected) {
@@ -140,10 +140,10 @@ const Home = () => {
                         {album.title}
                       </h1>
                       <p className="text-sm text-[#292929] mb-1">
-                        {album.artist} – {album.year}
+                        {album.artist}
                       </p>
                       <p className="text-sm text-[#568a99]">
-                        {album.category} – ★ {album.rating}
+                        {album.category}
                       </p>
                     </div>
 

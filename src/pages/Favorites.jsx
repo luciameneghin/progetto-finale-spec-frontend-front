@@ -1,9 +1,13 @@
 import { useContext } from "react"
 import { FavoritesContext } from "../context/FavoritesContext"
 import { Link } from "react-router-dom"
+import AddFavoritesCarousel from "../components/AddFavoritesCarousel"
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { FaHeart } from 'react-icons/fa'
 
 const Favorites = () => {
-  const { favorites } = useContext(FavoritesContext)
+  const { favorites, removeFavorite } = useContext(FavoritesContext)
 
   if (!favorites) {
     return (
@@ -31,12 +35,12 @@ const Favorites = () => {
         {favorites.map((fav) => (
           <div
             key={fav.id}
-            className="bg-[#f9f6f2] border-4 border-[#568a99] rounded-2xl shadow-lg overflow-hidden flex flex-col"
+            className="bg-[#f9f6f2] shadow-lg overflow-hidden flex flex-col"
           >
             <img
               src={fav.cover}
               alt={fav.title}
-              className="w-full h-48 object-cover rounded-t-2xl"
+              className="w-full object-cover"
             />
             <div className="p-4 flex flex-col flex-grow">
               <h2 className="text-xl font-semibold text-[#292929] mb-2">{fav.title}</h2>
@@ -47,6 +51,24 @@ const Favorites = () => {
                 <strong>Categoria:</strong> {fav.category} <br />
                 <strong>Durata:</strong> {fav.duration}
               </p>
+              <div className="relative">
+                <button
+                  onClick={() => {
+                    removeFavorite(fav.id)
+                    toast.info(`Album "${fav.title}" rimosso dai preferiti.`, {
+                      position: "bottom-right",
+                      autoClose: 3000,
+                      hideProgressBar: false,
+                      theme: "colored"
+                    })
+                  }}
+                  className="absolute bottom-93 right-0 text-2xl text-[#e9a716] border-2 rounded-full p-2 hover:text-amber-800"
+                  aria-label="Rimuovi dai preferiti"
+                >
+                  <FaHeart />
+                </button>
+              </div>
+
               <Link
                 to={`/albums/${fav.id}`}
                 className="mt-auto inline-block text-[#e9a716] font-semibold hover:text-[#c7481d] transition"
@@ -57,7 +79,8 @@ const Favorites = () => {
           </div>
         ))}
       </div>
-    </div>
+      <AddFavoritesCarousel />
+    </div >
   )
 }
 
