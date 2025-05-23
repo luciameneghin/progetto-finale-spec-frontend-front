@@ -50,7 +50,6 @@ const AlbumDetail = () => {
                   {albumDetail.artist}
                   <span className="text-2xl font-bold text-[#c7481d]"> - {albumDetail.title}</span>
                 </p>
-                <h3 className="text-[#e9a716]">★ {albumDetail.rating}</h3>
               </div>
 
               <div className="flex flex-col mt-4 gap-2">

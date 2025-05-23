@@ -44,7 +44,7 @@ const AlbumComparePanel = ({ albums, compareList, setCompareList, activeSlot, se
   }, [compareList, navigate])
 
   return (
-    <div className="border-4 border-[#568a99] bg-gray-100 rounded-xl p-6 shadow-lg mb-10">
+    <div className="border-4 border-[#568a99] bg-gray-100 rounded-xl p-6 shadow-lg mb-20">
       <h2 className="text-2xl font-extrabold text-center text-[#c7481d] mb-6">
         Seleziona almeno due album da confrontare
       </h2>

@@ -33,8 +33,8 @@ const CitCarousel = () => {
 
   if (quotes.length === 0) {
     return (
-      <div className="text-center py-10 text-gray-500">
-        Nessuna citazione disponibile.
+      <div className="py-10">
+        <h3 className='text-center text-gray-500'>Nessuna citazione disponibile.</h3>
       </div>
     );
   }
@@ -80,16 +80,16 @@ const CitCarousel = () => {
         {quotes.map((quote, index) => (
           <div
             key={index}
-            className="bg-[#f9f6f2] border-4 border-[#568a99] rounded-xl p-6 shadow-lg mb-10 mx-auto max-w-4xl"
+            className="bg-[#292929] border-4 border-[#568a99] rounded-xl p-6 shadow-lg mb-10 mx-auto max-w-4xl"
             style={{ minHeight: "180px" }}
           >
-            <div className="text-xl italic font-semibold mb-4 text-[#292929]">
+            <div className="text-xl italic font-semibold mb-4  text-[#f9f6f2]">
               “{quote.title}”
-              <p className="text-sm font-medium font-serif text-[#292929] mt-2">
+              <p className="text-sm font-medium font-serif  text-[#f9f6f2] mt-2">
                 {quote.author}
               </p>
             </div>
-            <p className="text-sm font-medium text-[#292929] italic">
+            <p className="text-sm font-medium text-[#f9f6f2] italic">
               {quote.song}
             </p>
           </div>

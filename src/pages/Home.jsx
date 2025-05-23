@@ -109,7 +109,7 @@ const Home = () => {
       <AlbumCarousel />
       <div className='bg-[#f9f6f2] shadow-xl'>
         <div className="container mx-auto px-4 py-5">
-          <h1 className='text-4xl font-extrabold text-center text-[#c7481d] py-20'>Compara. Analizza. Scegli il tuo album perfetto.</h1>
+          <h1 className='text-4xl font-extrabold text-center text-[#c7481d] py-30'>Compara. Analizza. Scegli il tuo album perfetto.</h1>
           <AlbumComparePanel
             albums={albums}
             compareList={compareList}
@@ -121,36 +121,25 @@ const Home = () => {
       </div>
 
       {/* Controlli di ricerca, filtro e ordinamento */}
-      <div style={{ position: 'relative', minHeight: '400px' }}>
-        <div
-          style={{
-            position: 'absolute',
-            top: -150, left: 0, right: 1500, bottom: 0,
-            backgroundImage: "url('public/pattern-recorder-removebg.png')",
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '1000px 1000px',
-            opacity: 0.5,
-            pointerEvents: 'none',
-            zIndex: -10,
-            transform: 'scaleX(-1)',
-          }} />
-        <div className='container mx-auto mx-10' style={{ position: 'relative', zIndex: 100, padding: '20px' }}>
-          <div className='mx-50'>
+      <div className='bg-[#f9f6f2]' style={{ position: 'relative', minHeight: '400px' }}>
 
-            <h1 className='text-2xl font-extrabold text-[#c7481d] pt-15 pb-5'>Gli iconici album anni '70</h1>
+        <div className='container mx-auto mx-10 border-b border-b-gray-400 border-t border-t-gray-400' style={{ position: 'relative', zIndex: 100, padding: '20px' }}>
+          <h1 className='text-2xl font-extrabold text-[#c7481d] pt-15 pb-5'>Gli iconici album anni '70</h1>
+          <div className='grid grid-cols-1 gap-6 pb-12'>
+
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
               <input
                 type="text"
                 placeholder="Cerca un album..."
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                className="flex-1 min-w-[200px] rounded border border-[#568a99] px-4 py-2 text-[#292929] placeholder-[#c7481d] focus:outline-none focus:ring-2 focus:ring-[#e9a716]"
+                className="flex-1 min-w-[200px] rounded border border-[#568a99] px-4 py-2 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716] bg-white"
               />
 
               <select
                 value={sortOption}
                 onChange={e => setSortOption(e.target.value)}
-                className="rounded border border-[#568a99] px-4 py-2 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716]"
+                className="rounded border border-[#568a99] px-4 py-2 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716] bg-white"
               >
                 <option value="">Ordina per</option>
                 <option value="title-asc">Titolo (A-Z)</option>
@@ -161,7 +150,7 @@ const Home = () => {
 
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="rounded border border-[#568a99] bg-[#e9a716] px-4 py-2 font-semibold text-[#292929] hover:bg-[#c7481d] transition"
+                className="rounded border border-[#568a99] bg-[#c7481d] px-4 py-2 font-semibold text-white transition"
               >
                 Filtra per categoria
               </button>
@@ -170,7 +159,7 @@ const Home = () => {
 
           {/* Griglia album */}
           {filteredAlbums.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 pb-12">
               {filteredAlbums.map(album => (
                 <div
                   key={album.id}
@@ -180,7 +169,7 @@ const Home = () => {
                     <img
                       src={album.cover}
                       alt={album.title}
-                      className="w-75 object-cover shadow-md mb-2"
+                      className="w-75 object-cover mx-auto shadow-md mb-2"
                     />
                     <h1
                       to={`/albums/${album.id}`}
@@ -202,7 +191,7 @@ const Home = () => {
                     <div className="mt-4 flex justify-between items-center gap-2 relative">
                       <button
                         onClick={() => handleAddOrRemove(album)}
-                        className="text-xl text-[#e9a716] hover:scale-110 transition absolute right-0 bottom-3 border-2 rounded-full p-2"
+                        className="text-sm text-[#e9a716] hover:scale-110 transition absolute right-0 bottom-3 border-2 rounded-full p-2"
                         aria-label={isFavorite(album.id) ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'}>
                         {isFavorite(album.id) ? <FaHeart /> : <FaRegHeart />}
                       </button>
@@ -224,17 +213,6 @@ const Home = () => {
             setSelectedCategory={setSelectedCategory}
           />
         </div>
-        <div
-          style={{
-            position: 'absolute',
-            top: 800, left: 1500, right: 0, bottom: 0,
-            backgroundImage: "url('public/pattern-recorder-removebg.png')",
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '800px 800px',
-            opacity: 0.5,
-            pointerEvents: 'none',
-            zIndex: -10,
-          }} />
       </div>
 
       <div className='bg-[#f9f6f2] py-20'>
