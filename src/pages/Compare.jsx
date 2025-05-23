@@ -64,8 +64,8 @@ const Compare = ({ handleRemoveAlbum }) => {
   }, [fetchAllAlbums])
 
   return (
-    <>
-      <div className="container mx-auto px-4 py-6  mt-45">
+    <div className='bg-[#f9f6f2] pt-3 pb-2'>
+      <div className="container mx-auto py-6 mt-45">
         <div className='text-center my-10'>
           <h1 className='text-5xl font-semibold'>
             Ogni disco ha una storia. Quale racconterà la tua?
@@ -101,7 +101,7 @@ const Compare = ({ handleRemoveAlbum }) => {
       <div className='pt-10'>
         <CitCarousel />
       </div>
-    </>
+    </div>
   )
 }
 

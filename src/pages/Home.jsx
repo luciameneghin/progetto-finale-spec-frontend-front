@@ -107,7 +107,7 @@ const Home = () => {
     <div>
       {/* Carousel */}
       <AlbumCarousel />
-      <div className='bg-[#f9f6f2] shadow-xl'>
+      <div className='bg-white shadow-xl'>
         <div className="container mx-auto px-4 py-5">
           <h1 className='text-4xl font-extrabold text-center text-[#c7481d] py-30'>Compara. Analizza. Scegli il tuo album perfetto.</h1>
           <AlbumComparePanel
@@ -121,11 +121,11 @@ const Home = () => {
       </div>
 
       {/* Controlli di ricerca, filtro e ordinamento */}
-      <div className='bg-[#f9f6f2]' style={{ position: 'relative', minHeight: '400px' }}>
+      <div className='bg-[#292929]' style={{ position: 'relative', minHeight: '400px' }}>
 
-        <div className='container mx-auto mx-10 border-b border-b-gray-400 border-t border-t-gray-400' style={{ position: 'relative', zIndex: 100, padding: '20px' }}>
-          <h1 className='text-2xl font-extrabold text-[#c7481d] pt-15 pb-5'>Gli iconici album anni '70</h1>
-          <div className='grid grid-cols-1 gap-6 pb-12'>
+        <div className='container mx-auto' style={{ position: 'relative', zIndex: 100, padding: '20px' }}>
+          <h1 className='text-2xl font-extrabold text-[#e9a716] pt-15 pb-5'>Gli iconici album anni '70</h1>
+          <div className='grid grid-cols-1 gap-6 pb-12 '>
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
               <input
@@ -133,13 +133,13 @@ const Home = () => {
                 placeholder="Cerca un album..."
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                className="flex-1 min-w-[200px] rounded border border-[#568a99] px-4 py-2 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716] bg-white"
+                className="flex-1 min-w-[200px] rounded border border-[#568a99] px-4 py-2 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716] bg-[#f9f6f2]"
               />
 
               <select
                 value={sortOption}
                 onChange={e => setSortOption(e.target.value)}
-                className="rounded border border-[#568a99] px-4 py-2 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716] bg-white"
+                className="rounded border border-[#568a99] px-4 py-2.5 text-[#292929] focus:outline-none focus:ring-2 focus:ring-[#e9a716] bg-[#f9f6f2]"
               >
                 <option value="">Ordina per</option>
                 <option value="title-asc">Titolo (A-Z)</option>
@@ -150,7 +150,7 @@ const Home = () => {
 
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="rounded border border-[#568a99] bg-[#c7481d] px-4 py-2 font-semibold text-white transition"
+                className="rounded border border-[#568a99] bg-[#e9a716] px-4 py-2 font-semibold text-white transition"
               >
                 Filtra per categoria
               </button>
@@ -163,7 +163,7 @@ const Home = () => {
               {filteredAlbums.map(album => (
                 <div
                   key={album.id}
-                  className="flex flex-col border-b border-r border-[#568a992c] shadow-md bg-white"
+                  className="flex flex-col shadow shadow-gray-200 bg-white"
                 >
                   <Link to={`/albums/${album.id}`}>
                     <img
@@ -215,7 +215,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='bg-[#f9f6f2] py-20'>
+      <div className='bg-white py-20'>
         <CitCarousel />
       </div>
     </div>

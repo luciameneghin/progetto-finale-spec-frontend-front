@@ -40,7 +40,7 @@ const CitCarousel = () => {
   }
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative my-15">
       <Carousel
         showArrows={true}
         autoPlay
@@ -83,7 +83,7 @@ const CitCarousel = () => {
             className="bg-[#292929] border-4 border-[#568a99] rounded-xl p-6 shadow-lg mb-10 mx-auto max-w-4xl"
             style={{ minHeight: "180px" }}
           >
-            <div className="text-xl italic font-semibold mb-4  text-[#f9f6f2]">
+            <div className="text-xl italic font-semibold mb-4 text-[#f9f6f2]">
               “{quote.title}”
               <p className="text-sm font-medium font-serif  text-[#f9f6f2] mt-2">
                 {quote.author}

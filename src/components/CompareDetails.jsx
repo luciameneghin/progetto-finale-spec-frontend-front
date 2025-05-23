@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const CompareDetails = ({ compareList, onRemoveAlbum }) => {
   const nonEmptyAlbums = useMemo(() => compareList.filter(Boolean), [compareList])
@@ -8,9 +9,17 @@ const CompareDetails = ({ compareList, onRemoveAlbum }) => {
 
       {nonEmptyAlbums.length < 2 ? (
         <div className="py-50">
-          <p className="text-center text-[#568a99] font-semibold text-3xl">
-            Seleziona almeno due album per iniziare il confronto.
-          </p>
+          <div>
+            <DotLottieReact
+              src="https://lottie.host/fc7b72f1-2989-4237-9760-7de28a46ab92/NvXutlDVun.lottie"
+              loop
+              autoplay
+              className='w-50 mx-auto mb-10'
+            />
+            <p className="text-center text-white font-semibold text-3xl">
+              Seleziona almeno due album per iniziare il confronto.
+            </p>
+          </div>
 
         </div>
 

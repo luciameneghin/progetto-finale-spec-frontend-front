@@ -12,7 +12,7 @@ const Footer = () => {
           </div>
 
           {/* Liste */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-8 md:mt-0 md:ml-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-8 md:mt-0 md:ml-10 pt-10 sm:pt-0 lg:pt-10">
             <div>
               <h4><strong>Join In</strong></h4>
               <p className='hover:text-[#c7481d] transition cursor-pointer'>Iscriviti</p>
@@ -59,7 +59,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4">
         {/* Blocco logo + testo */}
         <div className='flex items-center'>
-          <img src="/logo-scheda.png" alt="" className='w-10 mr-5' />
+          <img src="/logo-scheda.png" alt="" className='w-7 mr-5' />
           <p className="text-sm">
             © 2025 Tape Recorder. Tutti i diritti riservati.
           </p>

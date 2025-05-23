@@ -26,16 +26,16 @@ const Favorites = () => {
   }
 
   return (
-    <div className="max-w-5xl mx-auto p-6  mt-45">
+    <div className="max-w-5xl mx-auto p-6 mt-45">
       <h1 className="text-3xl font-extrabold text-[#c7481d] mb-8 text-center">
         Album Preferiti
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-30 border-b border-b-gray-400">
         {favorites.map((fav) => (
           <div
             key={fav.id}
-            className="bg-[#f9f6f2] shadow-lg overflow-hidden flex flex-col"
+            className="bg-white shadow-lg overflow-hidden flex flex-col"
           >
             <img
               src={fav.cover}
@@ -79,7 +79,9 @@ const Favorites = () => {
           </div>
         ))}
       </div>
-      <AddFavoritesCarousel />
+      <div className="pt-10">
+        <AddFavoritesCarousel />
+      </div>
     </div >
   )
 }
