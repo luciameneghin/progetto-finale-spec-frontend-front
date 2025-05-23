@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Puoi dire che sono un sognatore, ma non sono l'unico.",
+    "category": "",
+    "author": "John Lennon",
+    "song": "Imagine",
+    "location": "New York",
+    "year": 1971
+  },
+  {
+    "id": 2,
+    "title": "Lasciate che sia, lasciate che sia, lasciate che sia, lasciate che sia. Sussurrando parole di saggezza: lasciate che sia.",
+    "category": "",
+    "author": "The Beatles",
+    "song": "Let It Be",
+    "location": "Londra",
+    "year": 1970
+  },
+  {
+    "id": 3,
+    "title": "Tutto quello di cui hai bisogno è amore.",
+    "category": "",
+    "author": "The Beatles",
+    "song": "All You Need Is Love",
+    "location": "Londra",
+    "year": 1967
+  },
+  {
+    "id": 4,
+    "title": "Questo è un piccolo passo per un uomo, ma un gigantesco balzo per l’umanità.",
+    "category": "",
+    "author": "Neil Armstrong",
+    "song": "Campione audio utilizzato in vari brani",
+    "location": "Luna",
+    "year": 1969
+  },
+  {
+    "id": 5,
+    "title": "La risposta, amico mio, sta soffiando nel vento.",
+    "category": "",
+    "author": "Bob Dylan",
+    "song": "Blowin' in the Wind",
+    "location": "New York",
+    "year": 1963
+  },
+  {
+    "id": 6,
+    "title": "Non ti preoccupare di una cosa, perché ogni piccola cosa andrà bene.",
+    "category": "",
+    "author": "Bob Marley",
+    "song": "Three Little Birds",
+    "location": "Kingston",
+    "year": 1977
+  },
+  {
+    "id": 7,
+    "title": "La musica può cambiare il mondo perché può cambiare le persone.",
+    "category": "",
+    "author": "Bono",
+    "song": "Citazione da intervista",
+    "location": "Dublino",
+    "year": 1979
+  },
+  {
+    "id": 8,
+    "title": "Siamo solo dei mattoni nel muro.",
+    "category": "",
+    "author": "Pink Floyd",
+    "song": "Another Brick in the Wall",
+    "location": "Londra",
+    "year": 1979
+  },
+  {
+    "id": 9,
+    "title": "Non fermarmi adesso, sto avendo un momento bellissimo.",
+    "category": "",
+    "author": "Queen",
+    "song": "Don't Stop Me Now",
+    "location": "Montreux",
+    "year": 1978
+  },
+  {
+    "id": 10,
+    "title": "Ci vuole una grande fede nel destino per fare ciò che amiamo.",
+    "category": "",
+    "author": "Stevie Wonder",
+    "song": "As",
+    "location": "Detroit",
+    "year": 1976
+  }
+]

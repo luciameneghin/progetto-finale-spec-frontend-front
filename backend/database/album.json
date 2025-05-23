@@ -1,0 +1,986 @@
+[
+  {
+    "id": 1,
+    "title": "The Dark Side of the Moon",
+    "category": "Progressive Rock",
+    "artist": "Pink Floyd",
+    "year": 1973,
+    "cover": "http://localhost:3001/images/cover/the-dark-side-of-the-moon.jpg",
+    "label": "EMI Studios",
+    "duration": "42:49",
+    "tracksNumber": 10,
+    "tracks": [
+      {
+        "title": "Speak to Me",
+        "duration": "1:30"
+      },
+      {
+        "title": "Breathe",
+        "duration": "2:43"
+      },
+      {
+        "title": "On the Run",
+        "duration": "3:30"
+      },
+      {
+        "title": "Time",
+        "duration": "6:53"
+      },
+      {
+        "title": "The Great Gig in the Sky",
+        "duration": "4:44"
+      },
+      {
+        "title": "Money",
+        "duration": "6:23"
+      },
+      {
+        "title": "Us and Them",
+        "duration": "7:49"
+      },
+      {
+        "title": "Any Colour You Like",
+        "duration": "3:26"
+      },
+      {
+        "title": "Brain Damage",
+        "duration": "3:47"
+      },
+      {
+        "title": "Eclipse",
+        "duration": "2:01"
+      }
+    ],
+    "rating": 9.8,
+    "origin": "UK",
+    "description": "Uno degli album più iconici e influenti di sempre, The Dark Side Of The Moon dei Pink Floyd ha celebrato il suo 50° anniversario. L'album fu in parte sviluppato durante le esibizioni dal vivo e la band presentò una prima versione della suite al Rainbow Theatre di Londra diversi mesi prima dell'inizio delle registrazioni. The Dark Side Of The Moon” è l'ottavo album in studio dei Pink Floyd, pubblicato originariamente nel marzo 1973. Il nuovo materiale fu registrato nel 1972 e nel 1973 presso gli EMI Studios (ora Abbey Road Studios) di Londra. L'iconica copertina, che raffigura uno spettro di prismi, è stata progettata da Storm Thorgerson di Hipgnosis e disegnata da George Hardie. The Dark Side Of The Moon” ha venduto oltre 50 milioni di copie in tutto il mondo.",
+    "price": {
+      "cd": 13.97,
+      "vinyl": 55.90
+    }
+  },
+  {
+    "id": 2,
+    "title": "Led Zeppelin IV",
+    "category": "Hard Rock",
+    "artist": "Led Zeppelin",
+    "year": 1971,
+    "cover": "http://localhost:3001/images/cover/led-zeppelin-iv.jpg",
+    "label": "Atlantic Records",
+    "duration": "42:38",
+    "tracksNumber": 8,
+    "tracks": [
+      {
+        "title": "Black Dog",
+        "duration": "4:55"
+      },
+      {
+        "title": "Rock and Roll",
+        "duration": "3:40"
+      },
+      {
+        "title": "The Battle of Evermore",
+        "duration": "5:52"
+      },
+      {
+        "title": "Stairway to Heaven",
+        "duration": "8:02"
+      },
+      {
+        "title": "Misty Mountain Hop",
+        "duration": "4:38"
+      },
+      {
+        "title": "Four Sticks",
+        "duration": "4:44"
+      },
+      {
+        "title": "Going to California",
+        "duration": "3:32"
+      },
+      {
+        "title": "When the Levee Breaks",
+        "duration": "7:07"
+      }
+    ],
+    "rating": 9.5,
+    "origin": "UK",
+    "description": "Led Zeppelin IV, pubblicato nel 1971, è uno degli album più iconici della storia del rock. Include brani leggendari come Stairway to Heaven, Black Dog e Rock and Roll. L'album mescola hard rock, folk e blues, mostrando la versatilità della band. Non ha un titolo ufficiale, ma è riconosciuto per i quattro simboli scelti dai membri. Il suo successo mondiale ha consolidato i Led Zeppelin come pionieri del rock.",
+    "price": {
+      "cd": 10.99,
+      "vinyl": 29.99
+    }
+  },
+  {
+    "id": 3,
+    "title": "Off the Wall",
+    "category": "Pop",
+    "artist": "Michael Jackson",
+    "year": 1979,
+    "cover": "http://localhost:3001/images/cover/off-the-wall.jpg",
+    "label": "Epic Records",
+    "duration": "42.24",
+    "tracksNumber": 10,
+    "tracks": [
+      {
+        "title": "Don't Stop 'Til You Get Enough",
+        "duration": "6:05"
+      },
+      {
+        "title": "Rock with You",
+        "duration": "3:38"
+      },
+      {
+        "title": "Working Day and Night",
+        "duration": "5:12"
+      },
+      {
+        "title": "Get in The Floor",
+        "duration": "4:44"
+      },
+      {
+        "title": "Off The Wall",
+        "duration": "4:04"
+      },
+      {
+        "title": "Girlfriend",
+        "duration": "3:04"
+      },
+      {
+        "title": "She's Out of My Life",
+        "duration": "3:36"
+      },
+      {
+        "title": "I Can't Help It",
+        "duration": "4:27"
+      },
+      {
+        "title": "It's the Falling in Love",
+        "duration": "3:46"
+      },
+      {
+        "title": "Burn This Disco Out",
+        "duration": "3:38"
+      }
+    ],
+    "rating": 9.5,
+    "origin": "USA",
+    "description": "Off the Wall, pubblicato nel 1979, è il primo grande album solista di Michael Jackson prodotto da Quincy Jones. Mescola pop, funk, disco e soul, con hit come Don't Stop 'Til You Get Enough e Rock with You. Segna la transizione di Jackson da stella infantile a icona adulta del pop. L’album è energico, elegante e ballabile, con una produzione raffinata e innovativa. Il suo successo ha aperto la strada all’era di Thriller e alla dominazione mondiale di Jackson.",
+    "price": {
+      "cd": 9.98,
+      "vinyl": 21.98
+    }
+  },
+  {
+    "id": 4,
+    "title": "Hotel California",
+    "category": "Rock",
+    "artist": "Eagles",
+    "year": 1976,
+    "cover": "http://localhost:3001/images/cover/Hotelcalifornia.jpg",
+    "label": "Asylum Records",
+    "duration": "43:28",
+    "tracksNumber": 9,
+    "tracks": [
+      {
+        "title": "Hotel California",
+        "duration": "6:30"
+      },
+      {
+        "title": "New Kid in Town",
+        "duration": "5:04"
+      },
+      {
+        "title": "Life in the Fast Lane",
+        "duration": "4:46"
+      },
+      {
+        "title": "Wasted Time",
+        "duration": "4:55"
+      },
+      {
+        "title": "Wasted Time (Reprise)",
+        "duration": "1:22"
+      },
+      {
+        "title": "Victim of Love",
+        "duration": "4:11"
+      },
+      {
+        "title": "Pretty Maids All in a Row",
+        "duration": "4:05"
+      },
+      {
+        "title": "Try and Love Again",
+        "duration": "4:10"
+      },
+      {
+        "title": "The Last Resort",
+        "duration": "7:28"
+      }
+    ],
+    "rating": 9.3,
+    "origin": "USA",
+    "description": "Hotel California, pubblicato nel 1976 dagli Eagles, è un album simbolo del rock statunitense degli anni ’70. Combina sonorità rock, country e soft rock con testi malinconici e riflessivi sul sogno americano. Il brano omonimo, celebre per il suo assolo di chitarra e l’atmosfera enigmatica, è diventato un classico senza tempo. L’album esplora temi come l’alienazione, il lusso illusorio e la disillusione. È uno dei dischi più venduti di sempre e un punto di riferimento per il rock californiano.",
+    "price": {
+      "cd": 9.98,
+      "vinyl": 22.97
+    }
+  },
+  {
+    "id": 5,
+    "title": "A Night at the Opera",
+    "category": "Progressive Rock",
+    "artist": "Queen",
+    "year": 1975,
+    "cover": "http://localhost:3001/images/cover/Queen_A_Night_At_The_Opera.jpg",
+    "label": "EMI Studios",
+    "duration": "43:08",
+    "tracksNumber": 12,
+    "tracks": [
+      {
+        "title": "Death on Two Legs",
+        "duration": "3:43"
+      },
+      {
+        "title": "Lazing on a Sunday Afternoon",
+        "duration": "1:07"
+      },
+      {
+        "title": "I'm in Love with My Car",
+        "duration": "3:05"
+      },
+      {
+        "title": "You're My Best Friend",
+        "duration": "2:52"
+      },
+      {
+        "title": "'39",
+        "duration": "3:30"
+      },
+      {
+        "title": "Sweet Lady",
+        "duration": "4:02"
+      },
+      {
+        "title": "Seaside Rendezvous",
+        "duration": "2:13"
+      },
+      {
+        "title": "The Prophet's Song",
+        "duration": "8:21"
+      },
+      {
+        "title": "Love of My Life",
+        "duration": "3:39"
+      },
+      {
+        "title": "Good Company",
+        "duration": "3:23"
+      },
+      {
+        "title": "Bohemian Rhapsody",
+        "duration": "5:55"
+      },
+      {
+        "title": "God Save the Queen",
+        "duration": "1:15"
+      }
+    ],
+    "rating": 9.6,
+    "origin": "UK",
+    "description": "A Night at the Opera, pubblicato nel 1975 dai Queen, è un album eclettico e ambizioso che mescola rock, opera, prog e music hall. Celebre per la sua varietà musicale, include l’iconica Bohemian Rhapsody, considerata una delle canzoni più innovative della storia. Ogni brano riflette lo stile unico dei singoli membri della band. Il disco segna una svolta nella carriera dei Queen, consolidandoli come pionieri del rock sperimentale. È ancora oggi uno dei loro lavori più acclamati.",
+    "price": {
+      "cd": 16.67,
+      "vinyl": 39.97
+    }
+  },
+  {
+    "id": 6,
+    "title": "Who's Next",
+    "category": "Rock",
+    "artist": "The Who",
+    "year": 1971,
+    "cover": "http://localhost:3001/images/cover/Whos-next.jpg",
+    "label": "Decca",
+    "duration": "43:38",
+    "tracksNumber": 9,
+    "tracks": [
+      {
+        "title": "Baba O'Riley",
+        "duration": "5:00"
+      },
+      {
+        "title": "Bargain",
+        "duration": "5:33"
+      },
+      {
+        "title": "Love Ain't for Keeping",
+        "duration": "2:12"
+      },
+      {
+        "title": "My Wife",
+        "duration": "3:41"
+      },
+      {
+        "title": "The Song Is Over",
+        "duration": "6:16"
+      },
+      {
+        "title": "Getting in Tune",
+        "duration": "4:13"
+      },
+      {
+        "title": "Going Mobile",
+        "duration": "3:43"
+      },
+      {
+        "title": "Behind Blue Eyes",
+        "duration": "3:42"
+      },
+      {
+        "title": "Won't Get Fooled Again",
+        "duration": "8:32"
+      }
+    ],
+    "rating": 9.1,
+    "origin": "UK",
+    "description": "Who's Next, pubblicato nel 1971 dai The Who, è un album rock potente e innovativo nato dai resti del progetto multimediale abbandonato 'Lifehouse'. Include classici come Baba O'Riley e Behind Blue Eyes, caratterizzati da un uso pionieristico dei sintetizzatori. Il disco combina energia rock con introspezione lirica e arrangiamenti sofisticati. Rappresenta una maturazione musicale per la band, fondendo aggressività e sperimentazione. È considerato uno degli album più influenti della storia del rock.",
+    "price": {
+      "cd": 9.90,
+      "vinyl": 11.63
+    }
+  },
+  {
+    "id": 7,
+    "title": "Tapestry",
+    "category": "Singer-Songwriter",
+    "artist": "Carole King",
+    "year": 1971,
+    "cover": "http://localhost:3001/images/cover/Tapestry.jpg",
+    "label": "Ode Records",
+    "duration": "44:31",
+    "tracksNumber": 12,
+    "tracks": [
+      {
+        "title": "I Feel the Earth Move",
+        "duration": "3:00"
+      },
+      {
+        "title": "So Far Away",
+        "duration": "3:55"
+      },
+      {
+        "title": "It's Too Late",
+        "duration": "3:51"
+      },
+      {
+        "title": "Home Again",
+        "duration": "3:26"
+      },
+      {
+        "title": "Beautiful",
+        "duration": "2:38"
+      },
+      {
+        "title": "Way Over Yonder",
+        "duration": "4:44"
+      },
+      {
+        "title": "You've Got a Friend",
+        "duration": "5:09"
+      },
+      {
+        "title": "Where You Lead",
+        "duration": "2:51"
+      },
+      {
+        "title": "Will You Love Me Tomorrow?",
+        "duration": "2:38"
+      },
+      {
+        "title": "Smackwater Jack",
+        "duration": "3:13"
+      },
+      {
+        "title": "Tapestry",
+        "duration": "3:08"
+      },
+      {
+        "title": "Free Man in Paris",
+        "duration": "4:04"
+      }
+    ],
+    "rating": 9.0,
+    "origin": "USA",
+    "description": "Tapestry, pubblicato nel 1971 da Carole King, è uno degli album più iconici della cantautrice americana e una pietra miliare del cantautorato anni ’70. Intimo e profondo, fonde pop, soul e folk con testi autobiografici e melodie toccanti. Contiene brani celebri come “It’s Too Late”, “You’ve Got a Friend” e “I Feel the Earth Move”. L’album celebra l’empowerment femminile e l’espressione personale, diventando un successo critico e commerciale. Ancora oggi è considerato uno dei migliori album di tutti i tempi.",
+    "price": {
+      "cd": 7.98,
+      "vinyl": 19.95
+    }
+  },
+  {
+    "id": 8,
+    "title": "Aqualung",
+    "category": "Progressive Rock",
+    "artist": "Jethro Tull",
+    "year": 1971,
+    "cover": "http://localhost:3001/images/cover/Aqualung.jpg",
+    "label": "Chrysalis Records",
+    "duration": "43:42",
+    "tracksNumber": 11,
+    "tracks": [
+      {
+        "title": "Aqualung",
+        "duration": "6:34"
+      },
+      {
+        "title": "Cross-Eyed Mary",
+        "duration": "4:08"
+      },
+      {
+        "title": "Cheap Day Return",
+        "duration": "2:39"
+      },
+      {
+        "title": "Mother Goose",
+        "duration": "3:45"
+      },
+      {
+        "title": "Wond'ring Aloud",
+        "duration": "3:39"
+      },
+      {
+        "title": "Up to Me",
+        "duration": "3:43"
+      },
+      {
+        "title": "My God",
+        "duration": "8:50"
+      },
+      {
+        "title": "Hymn 43",
+        "duration": "3:39"
+      },
+      {
+        "title": "Slipstream",
+        "duration": "2:30"
+      },
+      {
+        "title": "Locomotive Breath",
+        "duration": "4:23"
+      },
+      {
+        "title": "Wind-Up",
+        "duration": "1:40"
+      }
+    ],
+    "rating": 8.9,
+    "origin": "UK",
+    "description": "Aqualung, pubblicato nel 1971 dai Jethro Tull, è un album rock-progressive che mescola chitarre pesanti, flauto traverso e testi provocatori. È noto per la sua critica alla religione organizzata, in particolare nei brani “My God” e “Hymn 43”, e per la sua struttura che sfuma i confini tra concept album e raccolta di canzoni. Il pezzo omonimo, “Aqualung”, racconta la storia di un senzatetto emarginato. L’album ha consolidato il successo della band e rappresenta una delle opere più influenti del progressive rock anni ’70.",
+    "price": {
+      "cd": 14.30,
+      "vinyl": 43.70
+    }
+  },
+  {
+    "id": 9,
+    "title": "Physical Graffiti",
+    "category": "Hard Rock",
+    "artist": "Led Zeppelin",
+    "year": 1975,
+    "cover": "http://localhost:3001/images/cover/Physical-Graffiti.jpg",
+    "label": "Swan Song",
+    "duration": "82:15",
+    "tracksNumber": 15,
+    "tracks": [
+      {
+        "title": "Custard Pie",
+        "duration": "4:13"
+      },
+      {
+        "title": "The Rover",
+        "duration": "5:37"
+      },
+      {
+        "title": "In My Time of Dying",
+        "duration": "11:06"
+      },
+      {
+        "title": "Houses of the Holy",
+        "duration": "4:01"
+      },
+      {
+        "title": "Trampled Under Foot",
+        "duration": "5:36"
+      },
+      {
+        "title": "Kashmir",
+        "duration": "8:37"
+      },
+      {
+        "title": "In the Light",
+        "duration": "8:46"
+      },
+      {
+        "title": "Bron-Yr-Aur",
+        "duration": "2:06"
+      },
+      {
+        "title": "Down by the Seaside",
+        "duration": "5:14"
+      },
+      {
+        "title": "Ten Years Gone",
+        "duration": "6:32"
+      },
+      {
+        "title": "Night Flight",
+        "duration": "3:34"
+      },
+      {
+        "title": "The Wanton Song",
+        "duration": "4:07"
+      },
+      {
+        "title": "Boogie with Stu",
+        "duration": "3:52"
+      },
+      {
+        "title": "Black Country Woman",
+        "duration": "4:22"
+      },
+      {
+        "title": "Sick Again",
+        "duration": "4:43"
+      }
+    ],
+    "rating": 9.7,
+    "origin": "UK",
+    "description": "Physical Graffiti, pubblicato nel 1975 dai Led Zeppelin, è un doppio album ambizioso che mescola hard rock, blues, folk e funk in una potente sintesi stilistica. Include classici come “Kashmir”, celebrato per la sua atmosfera orientale e orchestrazione epica. L’album esplora tematiche spirituali, urbane e personali, mostrando la versatilità della band. Registrato in parte con brani scartati da dischi precedenti, mantiene comunque una coesione sorprendente. Considerato un capolavoro, ha rafforzato la leggenda dei Led Zeppelin nel panorama rock.",
+    "price": {
+      "cd": 21.90,
+      "vinyl": 49.90
+    }
+  },
+  {
+    "id": 10,
+    "title": "The Wall",
+    "category": "Progressive Rock",
+    "artist": "Pink Floyd",
+    "year": 1979,
+    "cover": "http://localhost:3001/images/cover/The_Wall.jpg",
+    "label": "Harvest Records",
+    "duration": "81:09",
+    "tracksNumber": 26,
+    "tracks": [
+      {
+        "title": "In the Flesh?",
+        "duration": "3:19"
+      },
+      {
+        "title": "The Thin Ice",
+        "duration": "2:27"
+      },
+      {
+        "title": "Another Brick in the Wall, Part 1",
+        "duration": "3:21"
+      },
+      {
+        "title": "The Happiest Days of Our Lives",
+        "duration": "1:46"
+      },
+      {
+        "title": "Another Brick in the Wall, Part 2",
+        "duration": "3:59"
+      },
+      {
+        "title": "Mother",
+        "duration": "5:33"
+      },
+      {
+        "title": "Goodbye Blue Sky",
+        "duration": "2:46"
+      },
+      {
+        "title": "Empty Spaces",
+        "duration": "2:10"
+      },
+      {
+        "title": "Young Lust",
+        "duration": "3:25"
+      },
+      {
+        "title": "One of My Turns",
+        "duration": "3:38"
+      },
+      {
+        "title": "Don't Leave Me Now",
+        "duration": "4:12"
+      },
+      {
+        "title": "Another Brick in the Wall, Part 3",
+        "duration": "1:17"
+      },
+      {
+        "title": "Goodbye Cruel World",
+        "duration": "1:13"
+      },
+      {
+        "title": "Hey You",
+        "duration": "4:39"
+      },
+      {
+        "title": "Is There Anybody Out There?",
+        "duration": "2:44"
+      },
+      {
+        "title": "Nobody Home",
+        "duration": "3:25"
+      },
+      {
+        "title": "Vera",
+        "duration": "1:35"
+      },
+      {
+        "title": "Bring the Boys Back Home",
+        "duration": "1:18"
+      },
+      {
+        "title": "Comfortably Numb",
+        "duration": "6:22"
+      },
+      {
+        "title": "The Show Must Go On",
+        "duration": "1:36"
+      },
+      {
+        "title": "In the Flesh",
+        "duration": "3:18"
+      },
+      {
+        "title": "Run Like Hell",
+        "duration": "4:22"
+      },
+      {
+        "title": "Waiting for the Worms",
+        "duration": "4:00"
+      },
+      {
+        "title": "Stop",
+        "duration": "0:30"
+      },
+      {
+        "title": "The Trial",
+        "duration": "5:12"
+      },
+      {
+        "title": "Outside the Wall",
+        "duration": "1:42"
+      }
+    ],
+    "rating": 9.9,
+    "origin": "UK",
+    "description": "The Wall, pubblicato nel 1979 dai Pink Floyd, è un concept album epico che racconta la storia di Pink, una rockstar alienata che costruisce un muro metaforico per isolarsi dal mondo. Con brani iconici come “Another Brick in the Wall (Part 2)” e “Comfortably Numb”, l’album esplora temi come l’abbandono, il trauma, la guerra e la perdita di identità. Musicalmente complesso e teatrale, fonde rock progressivo, orchestrazioni e sperimentazione sonora. È uno dei dischi più celebri della band e ha ispirato un film e numerosi spettacoli dal vivo.",
+    "price": {
+      "cd": 20.79,
+      "vinyl": 44.98
+    }
+  },
+  {
+    "id": 11,
+    "title": "Bridge Over Troubled Water",
+    "category": "Folk",
+    "artist": "Simon & Garfunkel",
+    "year": 1970,
+    "cover": "http://localhost:3001/images/cover/Bridge_over_Troubled_Water.jpg",
+    "label": "Columbia Records",
+    "duration": "40:53",
+    "tracksNumber": 10,
+    "tracks": [
+      {
+        "title": "Bridge Over Troubled Water",
+        "duration": "4:55"
+      },
+      {
+        "title": "El Condor Pasa",
+        "duration": "3:07"
+      },
+      {
+        "title": "Cecilia",
+        "duration": "2:55"
+      },
+      {
+        "title": "Keep the Customer Satisfied",
+        "duration": "2:38"
+      },
+      {
+        "title": "So Long, Frank Lloyd Wright",
+        "duration": "3:48"
+      },
+      {
+        "title": "The Boxer",
+        "duration": "5:08"
+      },
+      {
+        "title": "Baby Driver",
+        "duration": "3:15"
+      },
+      {
+        "title": "The Only Living Boy in New York",
+        "duration": "3:58"
+      },
+      {
+        "title": "Why Don't You Write Me",
+        "duration": "2:34"
+      },
+      {
+        "title": "Song for the Asking",
+        "duration": "1:52"
+      }
+    ],
+    "rating": 9.2,
+    "origin": "USA",
+    "description": "Bridge Over Troubled Water, pubblicato nel 1970 da Simon & Garfunkel, è un album delicato e profondo che mescola folk, gospel e pop orchestrale. Il brano omonimo, divenuto un inno di conforto e solidarietà, è tra i momenti più alti del duo. L’album affronta temi come l’amore, la solitudine e il cambiamento, segnando l’apice artistico del gruppo prima della loro separazione. Canzoni come “The Boxer” e “Cecilia” mostrano la loro raffinatezza melodica e lirica. Rimane una delle opere più amate e influenti della musica degli anni '70.",
+    "price": {
+      "cd": 7.98,
+      "vinyl": 18.57
+    }
+  },
+  {
+    "id": 12,
+    "title": "Blue",
+    "category": "Folk",
+    "artist": "Joni Mitchell",
+    "year": 1971,
+    "cover": "http://localhost:3001/images/cover/Blue.jpg",
+    "label": "Reprise Records",
+    "duration": "38:26",
+    "tracksNumber": 10,
+    "tracks": [
+      {
+        "title": "All I Want",
+        "duration": "3:35"
+      },
+      {
+        "title": "My Old Man",
+        "duration": "3:33"
+      },
+      {
+        "title": "Little Green",
+        "duration": "2:12"
+      },
+      {
+        "title": "Carey",
+        "duration": "3:13"
+      },
+      {
+        "title": "Blue",
+        "duration": "4:08"
+      },
+      {
+        "title": "California",
+        "duration": "3:54"
+      },
+      {
+        "title": "This Flight Tonight",
+        "duration": "3:07"
+      },
+      {
+        "title": "River",
+        "duration": "4:06"
+      },
+      {
+        "title": "A Case of You",
+        "duration": "4:19"
+      },
+      {
+        "title": "The Last Time I Saw Richard",
+        "duration": "4:31"
+      }
+    ],
+    "rating": 9.0,
+    "origin": "Canada",
+    "description": "Blue di Joni Mitchell, pubblicato nel 1971, è un capolavoro intimo e confessionale della cantautrice canadese. L’album esplora temi di amore, perdita e vulnerabilità con una sincerità rara, accompagnata da arrangiamenti minimali di pianoforte, chitarra e dulcimer. Brani come “River”, “A Case of You” e “Carey” mostrano la sua abilità poetica e la profondità emotiva della sua voce. Considerato uno degli album più influenti di tutti i tempi, Blue ha lasciato un’impronta indelebile nella musica cantautorale e nel cuore di generazioni di ascoltatori.",
+    "price": {
+      "cd": 14.04,
+      "vinyl": 23.99
+    }
+  },
+  {
+    "id": 13,
+    "title": "Rumours",
+    "category": "Rock",
+    "artist": "Fleetwood Mac",
+    "year": 1977,
+    "cover": "http://localhost:3001/images/cover/Rumours.jpg",
+    "label": "Warner Bros. Records",
+    "duration": "39:43",
+    "tracksNumber": 11,
+    "tracks": [
+      {
+        "title": "Second Hand News",
+        "duration": "2:43"
+      },
+      {
+        "title": "Dreams",
+        "duration": "4:14"
+      },
+      {
+        "title": "Never Going Back Again",
+        "duration": "2:02"
+      },
+      {
+        "title": "Don't Stop",
+        "duration": "3:13"
+      },
+      {
+        "title": "Go Your Own Way",
+        "duration": "3:38"
+      },
+      {
+        "title": "Songbird",
+        "duration": "3:20"
+      },
+      {
+        "title": "The Chain",
+        "duration": "4:30"
+      },
+      {
+        "title": "You Make Loving Fun",
+        "duration": "3:36"
+      },
+      {
+        "title": "I Don't Want to Know",
+        "duration": "3:11"
+      },
+      {
+        "title": "Oh Daddy",
+        "duration": "3:54"
+      },
+      {
+        "title": "Gold Dust Woman",
+        "duration": "4:51"
+      }
+    ],
+    "rating": 9.4,
+    "origin": "UK/USA",
+    "description": "Rumours dei Fleetwood Mac, uscito nel 1977, è uno degli album più iconici della storia del rock. Nato in un periodo turbolento per la band, segnata da relazioni interrotte e tensioni personali, trasforma il dramma in arte con testi intensi e melodie memorabili. Brani come “Go Your Own Way”, “Dreams” e “The Chain” mescolano pop, rock e folk con armonie perfette e produzione impeccabile. Il disco ha riscosso un successo mondiale ed è diventato un simbolo degli anni ’70. Ancora oggi è amato per la sua autenticità emotiva e il suo equilibrio musicale.",
+    "price": {
+      "cd": 9.99,
+      "vinyl": 23.99
+    }
+  },
+  {
+    "id": 14,
+    "title": "Destroyer",
+    "category": "Rock",
+    "artist": "KISS",
+    "year": 1976,
+    "cover": "http://localhost:3001/images/cover/destroyer.jpg",
+    "label": "Casablanca Records",
+    "duration": "34:27",
+    "tracksNumber": 9,
+    "tracks": [
+      {
+        "title": "Detroit Rock City",
+        "duration": "5:17"
+      },
+      {
+        "title": "King of the Night Time World",
+        "duration": "3:19"
+      },
+      {
+        "title": "God of Thunder",
+        "duration": "4:13"
+      },
+      {
+        "title": "Great Expectations",
+        "duration": "4:24"
+      },
+      {
+        "title": "Flaming Youth",
+        "duration": "2:59"
+      },
+      {
+        "title": "Sweet Pain",
+        "duration": "3:20"
+      },
+      {
+        "title": "Shout It Out Loud",
+        "duration": "2:49"
+      },
+      {
+        "title": "Beth",
+        "duration": "2:49"
+      },
+      {
+        "title": "Do You Love Me?",
+        "duration": "3:33"
+      }
+    ],
+    "rating": 8.9,
+    "origin": "USA",
+    "description": "Destroyer dei KISS, uscito nel 1976, è uno degli album più celebri e influenti della band hard rock americana. Caratterizzato da un suono più ricco e prodotto rispetto ai lavori precedenti, mescola riff potenti con melodie accattivanti. Brani come “Detroit Rock City” e “God of Thunder” sono diventati inni del rock, grazie anche alla teatralità e all’energia della band. L’album ha consolidato la fama dei KISS come icone del rock anni ’70 e rimane un punto di riferimento per il genere. La produzione curata e le performance carismatiche ne fanno un classico senza tempo.",
+    "price": {
+      "cd": 13.98,
+      "vinyl": 44.24
+    }
+  },
+  {
+    "id": 15,
+    "title": "That's the Way of the World",
+    "category": "Funk / Soul",
+    "artist": "Earth, Wind & Fire",
+    "year": 1975,
+    "cover": "http://localhost:3001/images/cover/thats-the-way-of-the-world.jpg",
+    "label": "Columbia Records",
+    "duration": "38:23",
+    "tracksNumber": 9,
+    "tracks": [
+      {
+        "title": "Shining Star",
+        "duration": "2:50"
+      },
+      {
+        "title": "That's the Way of the World",
+        "duration": "5:42"
+      },
+      {
+        "title": "Happy Feelin'",
+        "duration": "4:12"
+      },
+      {
+        "title": "All About Love",
+        "duration": "4:43"
+      },
+      {
+        "title": "Yearnin' Learnin'",
+        "duration": "3:03"
+      },
+      {
+        "title": "Reasons",
+        "duration": "5:30"
+      },
+      {
+        "title": "Change Your Mind",
+        "duration": "4:00"
+      },
+      {
+        "title": "See the Light",
+        "duration": "3:50"
+      },
+      {
+        "title": "Sing a Song",
+        "duration": "4:33"
+      }
+    ],
+    "rating": 9.5,
+    "origin": "USA",
+    "description": "That's the Way of the World degli Earth, Wind & Fire, pubblicato nel 1975, è un album iconico che fonde soul, funk e R&B con elementi jazz e gospel. Caratterizzato da arrangiamenti ricchi e sofisticati, il disco contiene brani memorabili come la title track “That’s the Way of the World” e “Shining Star”. L’album celebra temi di amore, vita e spiritualità con un sound caldo e coinvolgente. Ha avuto un grande successo commerciale e critico, diventando uno dei lavori più amati della band. È considerato un classico della musica soul-funk degli anni ’70, con un impatto duraturo nel panorama musicale.",
+    "price": {
+      "cd": 17.99,
+      "vinyl": 32.50
+    }
+  }
+]

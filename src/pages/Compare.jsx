@@ -67,10 +67,10 @@ const Compare = ({ handleRemoveAlbum }) => {
     <div className='bg-[#f9f6f2] pt-3 pb-2'>
       <div className="container mx-auto py-6 mt-45">
         <div className='text-center my-10'>
-          <h1 className='text-5xl font-semibold'>
+          <h1 className='text-5xl font-semibold text-[#e9a716]'>
             Ogni disco ha una storia. Quale racconterà la tua?
           </h1>
-          <h4>Tra vinili e leggende: trova il tuo album perfetto.</h4>
+          <h4 className='text-2xl text-[#e9a716] pt-5'>Tra vinili e leggende: trova il tuo album perfetto.</h4>
         </div>
 
         <AlbumComparePanel

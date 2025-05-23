@@ -27,7 +27,7 @@ const Favorites = () => {
 
   return (
     <div className="max-w-5xl mx-auto p-6 mt-45">
-      <h1 className="text-3xl font-extrabold text-[#c7481d] mb-8 text-center">
+      <h1 className="text-3xl font-extrabold text-[#e9a716] mb-8 text-center">
         Album Preferiti
       </h1>
 

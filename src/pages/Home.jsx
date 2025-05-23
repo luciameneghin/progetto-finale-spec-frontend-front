@@ -109,7 +109,7 @@ const Home = () => {
       <AlbumCarousel />
       <div className='bg-white shadow-xl'>
         <div className="container mx-auto px-4 py-5">
-          <h1 className='text-4xl font-extrabold text-center text-[#c7481d] py-30'>Compara. Analizza. Scegli il tuo album perfetto.</h1>
+          <h1 className='text-4xl font-extrabold text-center text-[#e9a716] py-30'>Compara. Analizza. Scegli il tuo album perfetto.</h1>
           <AlbumComparePanel
             albums={albums}
             compareList={compareList}
