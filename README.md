@@ -36,8 +36,11 @@ Nessun risultato trovato
 Lista preferiti vuota
 Nessun elemento selezionato nel comparatore
 
+Homepage
 ![Image](https://github.com/user-attachments/assets/48d8c9f3-bab5-43ed-8e22-a13aadaa0898)
 
+Comparator Page
 ![Image](https://github.com/user-attachments/assets/171736d4-c742-4a7c-afb5-0c746bda06ed)
 
+Favorites Page
 ![Image](https://github.com/user-attachments/assets/40172ba0-f8c6-4065-99a0-c7273a1c80c9)
