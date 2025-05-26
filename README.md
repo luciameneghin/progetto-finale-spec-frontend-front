@@ -1,54 +1,37 @@
-# React + TypeScript + Vite
+PROGETTO PRATICO
+Comparatore di Records
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Consegna
+Realizzare un’interfaccia frontend in React per una SPA (Single Page Application) capace di visualizzare, cercare, filtrare, confrontare e salvare come preferiti diversi record.
 
-Currently, two official plugins are available:
+Funzionalità:
+Gestione di una risorsa definita in types.ts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Lista dei record, che mostra solo le proprietà principali title e category, e include:
 
-## Expanding the ESLint configuration
+Barra di ricerca per cercare nei titoli (title)
+Filtro per categoria (category)
+Ordinamento alfabetico per title o category (A-Z e Z-A)
+Pagina di dettaglio per ogni record, con visualizzazione estesa delle sue proprietà (es. price, description, brand, ecc.)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Comparatore di 2 record, visualizzati affiancati per confrontarne le caratteristiche.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+È libera la modalità di selezione: puoi permettere all’utente di aggiungere record al comparatore direttamente dalla lista, dalla pagina di dettaglio, oppure usare un menu a tendina, checkbox o qualsiasi altro sistema.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+L’importante è che l’utente possa scegliere 2 record qualsiasi e confrontarli in modo chiaro.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Sistema di preferiti, sempre accessibile e aggiornabile:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+L’utente può aggiungere o rimuovere record dai preferiti in qualsiasi momento
+I preferiti devono essere consultabili in ogni sezione dell’app (es. tramite una sezione dedicata, un’icona fissa, o una sidebar)
+
+🎯 Requisiti Aggiuntivi
+Da affrontare solo dopo aver completato i Requisiti Minimi:
+
+Comparatore di 2 o più record: il layout si adatta per confrontare più elementi affiancati
+Debounce sulla ricerca, per migliorare la UX ed evitare chiamate API inutili
+Persistenza dei preferiti (es. salvataggio in localStorage), così che rimangano anche dopo il refresh della pagina
+Gestione degli stati vuoti, come:
+Nessun risultato trovato
+Lista preferiti vuota
+Nessun elemento selezionato nel comparatore
